@@ -4,22 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM</title>
+    <title>DOM Project</title>
 </head>
 
 <body>
-    <p>prepare for dom</p>
-    <!-- document object model buildin object -->
-    <button>hello</button>
-    <button id="id-btn">hello</button>
-    <button id="class-btn">hello</button>
+    <p>YouTube Subscribe Button</p>
+    <button onclick="subscribed()" class="js-subscribe-button">Subscribe</button>
+
     <script>
-        // document.body.innerHTML = 'hello';
-        document.title = 'dom by nayeem';
-        document.querySelector('button').innerHTML = 'click me';
-        document.querySelector('#id-btn').innerHTML = 'Id button';
-        document.querySelector('#class-btn').innerHTML = 'Class button';
-        // document.body.innerHTML = '<h1>hello</h1>';
+        function subscribed() {
+            const buttonElement = document.querySelector('.js-subscribe-button');
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerText = 'Subscribed';
+            } else {
+                buttonElement.innerText = 'Subscribe';
+            }
+            // if (buttonElement.innerHTML === 'Subscribe') {
+            //     buttonElement.innerHTML = 'Subscribed';
+            // } else {
+            //     buttonElement.innerHTML = 'Subscribe';  
+            // }
+        }
     </script>
 
 </body>
