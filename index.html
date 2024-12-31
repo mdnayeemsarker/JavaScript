@@ -18,6 +18,22 @@
     score.ties = 0;
     ">Reset Scroe</button>
     <script>
+
+        const product = {
+            name: 'Socks',
+            color: '#002254',
+            rating: {
+                stars: 4.5,
+                count: 550,
+            },
+            fun: function () {
+                console.log('function of object');                
+            }
+        };
+
+        console.log(product);
+        product.fun();
+
         const score = {
             wins: 0,
             losses: 0,
