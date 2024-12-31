@@ -32,7 +32,13 @@
         };
 
         console.log(product);
-        product.fun();
+
+        console.log(JSON.stringify(product));
+        
+        const jsonString = JSON.stringify(product);
+
+        console.log(JSON.parse(jsonString));
+        
 
         const score = {
             wins: 0,
