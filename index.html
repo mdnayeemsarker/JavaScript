@@ -25,17 +25,39 @@
             return comMove;
         }
 
-        function getResult(myMove) {
+        function getResult(playerMove) {
             const comMove = getComMove();
             let result = '';
-            if (comMove === 'rock') {
-                result = 'Tai.'
-            } else if (comMove === 'paper') {
-                result = 'You are lose.'
-            } else if (comMove === 'scissors') {
-                result = 'You are win.'
+            if (playerMove === 'rock') {
+                if (comMove === 'rock') {
+                    result = 'Tai.'
+                } else if (comMove === 'paper') {
+                    result = 'You are lose.'
+                } else if (comMove === 'scissors') {
+                    result = 'You are win.'
+                }
+            }else if (playerMove === 'paper') {
+                if (comMove === 'rock') {
+                    result = 'You are win.'
+                }
+                else if (comMove === 'paper') {
+                    result = 'Tai.'
+                }
+                else if (comMove === 'scissors') {
+                    result = 'You are lose.'
+                }
+            }else if (playerMove === 'scissors') {
+                if (comMove === 'rock') {
+                    result = 'You are lose.'
+                }
+                else if (comMove === 'paper') {
+                    result = 'You are win.'
+                }
+                else if (comMove === 'scissors') {
+                    result = 'Tai.'
+                }
             }
-            return `Your move is: ${myMove}, Computer move is: ${comMove}. ${result}`;
+            return `Your move is: ${playerMove}, Computer move is: ${comMove}. ${result}`;
         }
     </script>
 </body>
