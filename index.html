@@ -12,45 +12,58 @@
     <button onclick="alert(playGame('rock'))">Rock</button>
     <button onclick="alert(playGame('paper'))">Paper</button>
     <button onclick="alert(playGame('scissors'))">Scissors</button>
-    <button onclick="
+    <button
+        onclick="
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
     localStorage.removeItem('score');
-    ">Reset Scroe</button>
+    ">Reset
+        Scroe</button>
     <script>
-
         /*
-        const product = {
-            name: 'Socks',
-            color: '#002254',
-            rating: {
-                stars: 4.5,
-                count: 550,
-            },
-            fun: function () {
-                console.log('function of object');                
-            }
+            const product = {
+                name: 'Socks',
+                color: '#002254',
+                rating: {
+                    stars: 4.5,
+                    count: 550,
+                },
+                fun: function () {
+                    console.log('function of object');                
+                }
+            };
+
+            console.log(product);
+
+            console.log(JSON.stringify(product));
+            
+            const jsonString = JSON.stringify(product);
+
+            console.log(JSON.parse(jsonString));
+            */
+
+        // let score = JSON.parse(localStorage.getItem('score'));
+        let score = JSON.parse(localStorage.getItem('score')) || {
+            wins: 0,
+            losses: 0,
+            ties: 0,
         };
 
-        console.log(product);
-
-        console.log(JSON.stringify(product));
-        
-        const jsonString = JSON.stringify(product);
-
-        console.log(JSON.parse(jsonString));
-        */
-
-        let score = JSON.parse(localStorage.getItem('score'));
-        
-        if (score === null) {
-            score = {
-                wins: 0,
-                losses: 0,
-                ties: 0,
-            };
-        }
+        // if (score === null) {
+        //     score = {
+        //         wins: 0,
+        //         losses: 0,
+        //         ties: 0,
+        //     };
+        // }
+        // if (!score) {
+        //     score = {
+        //         wins: 0,
+        //         losses: 0,
+        //         ties: 0,
+        //     };
+        // }
 
         function getComMove() {
             const randomNumber = Math.random();
@@ -75,28 +88,24 @@
                 } else if (comMove === 'scissors') {
                     result = 'You are win.'
                 }
-            }else if (playerMove === 'paper') {
+            } else if (playerMove === 'paper') {
                 if (comMove === 'rock') {
                     result = 'You are win.'
-                }
-                else if (comMove === 'paper') {
+                } else if (comMove === 'paper') {
                     result = 'Tai.'
-                }
-                else if (comMove === 'scissors') {
+                } else if (comMove === 'scissors') {
                     result = 'You are lose.'
                 }
-            }else if (playerMove === 'scissors') {
+            } else if (playerMove === 'scissors') {
                 if (comMove === 'rock') {
                     result = 'You are lose.'
-                }
-                else if (comMove === 'paper') {
+                } else if (comMove === 'paper') {
                     result = 'You are win.'
-                }
-                else if (comMove === 'scissors') {
+                } else if (comMove === 'scissors') {
                     result = 'Tai.'
                 }
             }
-            
+
             if (result === 'You are win.') {
                 score.wins += 1;
             } else if (result === 'You are lose.') {
@@ -107,7 +116,7 @@
             console.log(score);
 
             localStorage.setItem('score', JSON.stringify(score));
-            
+
             // return `Your move is: ${playerMove}, Computer move is: ${comMove}. ${result}\nWins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
             return `Your move is: ${playerMove}, Computer move is: ${comMove}. ${result}\nWins: ${score['wins']} Losses: ${score['losses']} Ties: ${score['ties']}`;
         }
