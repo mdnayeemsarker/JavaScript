@@ -16,9 +16,11 @@
     score.wins = 0;
     score.losses = 0;
     score.ties = 0;
+    localStorage.removeItem('score');
     ">Reset Scroe</button>
     <script>
 
+        /*
         const product = {
             name: 'Socks',
             color: '#002254',
@@ -38,13 +40,18 @@
         const jsonString = JSON.stringify(product);
 
         console.log(JSON.parse(jsonString));
-        
+        */
 
-        const score = {
-            wins: 0,
-            losses: 0,
-            ties: 0,
-        };
+        let score = JSON.parse(localStorage.getItem('score'));
+        
+        if (score === null) {
+            score = {
+                wins: 0,
+                losses: 0,
+                ties: 0,
+            };
+        }
+
         function getComMove() {
             const randomNumber = Math.random();
             if (randomNumber >= 0 && randomNumber < 1 / 3) {
@@ -98,6 +105,8 @@
                 score.ties += 1;
             }
             console.log(score);
+
+            localStorage.setItem('score', JSON.stringify(score));
             
             // return `Your move is: ${playerMove}, Computer move is: ${comMove}. ${result}\nWins: ${score.wins} Losses: ${score.losses} Ties: ${score.ties}`;
             return `Your move is: ${playerMove}, Computer move is: ${comMove}. ${result}\nWins: ${score['wins']} Losses: ${score['losses']} Ties: ${score['ties']}`;
