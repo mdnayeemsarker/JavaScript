@@ -25,13 +25,15 @@
 
         product.name = 'Cotton shocks';
 
-
         console.log(product);
-        console.log(product.name);
-        console.log(product.price);
-        console.log(product.rating);
-        console.log(product.discount);
         
+        product.newProperty = true;
+        console.log(product);
+        
+        delete product.newProperty;
+        console.log(product);
+
+
     </script>
 </body>
 
