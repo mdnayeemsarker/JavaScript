@@ -4,27 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables</title>
+    <title>Project Variables</title>
 </head>
-
 <body>
 
+    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+    <button onclick="
+    cartQuantity = cartQuantity + 1;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Add to card</button>
+    <button onclick="
+    cartQuantity = cartQuantity + 2;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+2 Item</button>
+    <button onclick="
+    cartQuantity = cartQuantity + 5;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+5 Item</button>
+    <button onclick="
+    cartQuantity = cartQuantity - 5;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">-5 Item</button>
+    <button onclick="
+    cartQuantity = cartQuantity - 2;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">-2 Item</button>
+    <button onclick="
+    cartQuantity = cartQuantity - 1;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Remove Quantity</button>
+    <button onclick="
+    cartQuantity = 0;
+    console.log('Cart was reset');
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Reset</button>
+
     <script>
-        let variable = 3;
-        console.log(variable);
-        let result = 50 * 2;
-        console.log(result);
-        let calculation = variable + result;
-        console.log(calculation);
-
-        result = result + calculation;
-
-        console.log(result);
-        
-        let message = 'this is my';
-        console.log(message);
-        
-
+        let cartQuantity = 0;
     </script>
 </body>
 
