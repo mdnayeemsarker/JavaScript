@@ -4,61 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Function</title>
+    <title>Objects</title>
 </head>
 
 <body>
-    <p>function using for rock paper or scissors</p>
-    <button onclick="alert(getResult('rock'))">Rock</button>
-    <button onclick="alert(getResult('paper'))">Paper</button>
-    <button onclick="alert(getResult('scissors'))">Scissors</button>
+    <p>objects with js</p>
     <script>
-        function getComMove() {
-            const randomNumber = Math.random();
-            if (randomNumber >= 0 && randomNumber < 1 / 3) {
-                comMove = 'rock';
-            } else if (randomNumber >= 1 / 3 && randomNumber <= 2 / 3) {
-                comMove = 'paper';
-            } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-                comMove = 'scissors';
-            }
-            return comMove;
-        }
-
-        function getResult(playerMove) {
-            const comMove = getComMove();
-            let result = '';
-            if (playerMove === 'rock') {
-                if (comMove === 'rock') {
-                    result = 'Tai.'
-                } else if (comMove === 'paper') {
-                    result = 'You are lose.'
-                } else if (comMove === 'scissors') {
-                    result = 'You are win.'
-                }
-            }else if (playerMove === 'paper') {
-                if (comMove === 'rock') {
-                    result = 'You are win.'
-                }
-                else if (comMove === 'paper') {
-                    result = 'Tai.'
-                }
-                else if (comMove === 'scissors') {
-                    result = 'You are lose.'
-                }
-            }else if (playerMove === 'scissors') {
-                if (comMove === 'rock') {
-                    result = 'You are lose.'
-                }
-                else if (comMove === 'paper') {
-                    result = 'You are win.'
-                }
-                else if (comMove === 'scissors') {
-                    result = 'Tai.'
-                }
-            }
-            return `Your move is: ${playerMove}, Computer move is: ${comMove}. ${result}`;
-        }
+        
     </script>
 </body>
 
