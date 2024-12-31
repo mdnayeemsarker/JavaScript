@@ -8,14 +8,72 @@
 </head>
 
 <body>
-    <p>functions of js</p>
-    <button onclick="click()">Click</button>
-    <script>
-        function click() {
-            console.log('hello');
-            console.log(1+1);
+    <p>function using for rock paper or scissors</p>
+    <button
+        onclick="
+        getComMove();
+        console.log(comMove);
+        // getResult()
+        let result = '';
+        if (comMove === 'rock') {
+            result = 'Tai.'
         }
-        click();
+        else if (comMove === 'paper') {
+            result = 'You are lose.'
+        }
+        else if (comMove === 'scissors') {
+            result = 'You are win.'
+        }
+
+        alert(`Your move is: rock, Computer move is: ${comMove}. ${result}`);
+    ">Rock</button>
+    <button
+        onclick="
+        getComMove();
+        console.log(comMove);
+        let result = '';
+        if (comMove === 'rock') {
+            result = 'You are win.'
+        }
+        else if (comMove === 'paper') {
+            result = 'Tai.'
+        }
+        else if (comMove === 'scissors') {
+            result = 'You are lose.'
+        }
+
+        alert(`Your move is: paper, Computer move is: ${comMove}. ${result}`);
+    ">Paper</button>
+    <button
+        onclick="
+        getComMove();
+        console.log(comMove);
+        let result = '';
+        if (comMove === 'rock') {
+            result = 'You are lose.'
+        }
+        else if (comMove === 'paper') {
+            result = 'You are win.'
+        }
+        else if (comMove === 'scissors') {
+            result = 'Tai.'
+        }
+
+        alert(`Your move is: scissors, Computer move is: ${comMove}. ${result}`);
+    ">Scissors</button>
+    <script>
+        let comMove = '';
+
+        function getComMove() {
+            const randomNumber = Math.random();
+            if (randomNumber >= 0 && randomNumber < 1 / 3) {
+                comMove = 'rock';
+            } else if (randomNumber >= 1 / 3 && randomNumber <= 2 / 3) {
+                comMove = 'paper';
+            } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+                comMove = 'scissors';
+            }
+        }
     </script>
 </body>
 
