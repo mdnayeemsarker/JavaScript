@@ -4,26 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic</title>
-    <style>
-        /*this is single line comment or 
-        also use multi line comment in css*/
-        button{
-            background-color: blue;
-            color: yellow;
-            border: none;
-            padding: 5px;
-            font-style: oblique;
-        }
-    </style>
-</head>
 
+    <title>Project Variables</title>
+</head>
 <body>
-    <!-- this is an single line comment in html
-    also use multi line comment in html
-    -->
-    <button>Click me</button>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, quis iste commodi in quod reprehenderit maiores eaque velit sit blanditiis placeat autem itaque optio aspernatur cupiditate, voluptates ab at rem!</p>
+
+    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+    <button onclick="
+    cartQuantity += 1;
+    // cartQuantity ++;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Add to card</button>
+    <button onclick="
+    cartQuantity += 2;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+2 Item</button>
+    <button onclick="
+    cartQuantity += 5;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">+5 Item</button>
+    <button onclick="
+    cartQuantity -= 5;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">-5 Item</button>
+    <button onclick="
+    cartQuantity -= 2;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">-2 Item</button>
+    <button onclick="
+    // cartQuantity -= 1;
+    cartQuantity --;
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Remove Quantity</button>
+    <button onclick="
+    cartQuantity = 0;
+    console.log('Cart was reset');
+    console.log(`Cart Quantity: ${cartQuantity}`);
+    ">Reset</button>
+
+    <script>
+        let cartQuantity = 0;
+        const cartQuantity2 = 25; // this is not changable variable
+        var cartQuantity3 = 'const can not changable variable. \nvar cangable but not use new version of JavaScript, use old version of JS'; // canagable but not use new version of JavaScript, use old version of JS
+
+        console.log(cartQuantity);
+        console.log(cartQuantity2);
+        console.log(cartQuantity3);
+        console.log(typeof cartQuantity3); // checked the type of a variable 
+        
+    </script>
 </body>
 
 </html>
