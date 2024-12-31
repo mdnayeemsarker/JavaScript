@@ -9,9 +9,17 @@
 
 <body>
     <p>prepare for dom</p>
-
+    <!-- document object model buildin object -->
+    <button>hello</button>
+    <button id="id-btn">hello</button>
+    <button id="class-btn">hello</button>
     <script>
-        
+        // document.body.innerHTML = 'hello';
+        document.title = 'dom by nayeem';
+        document.querySelector('button').innerHTML = 'click me';
+        document.querySelector('#id-btn').innerHTML = 'Id button';
+        document.querySelector('#class-btn').innerHTML = 'Class button';
+        // document.body.innerHTML = '<h1>hello</h1>';
     </script>
 
 </body>
