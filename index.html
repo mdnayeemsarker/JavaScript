@@ -4,53 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Variables</title>
+    <title>Boolean and Conditional Statement</title>
 </head>
 <body>
-
-    <button onclick="console.log(`Cart Quantity: ${cartQuantity}`);
-    ">Show Quantity</button>
-    <button onclick="
-    cartQuantity += 1;
-    // cartQuantity ++;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-    ">Add to card</button>
-    <button onclick="
-    cartQuantity += 2;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-    ">+2 Item</button>
-    <button onclick="
-    cartQuantity += 5;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-    ">+5 Item</button>
-    <button onclick="
-    cartQuantity -= 5;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-    ">-5 Item</button>
-    <button onclick="
-    cartQuantity -= 2;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-    ">-2 Item</button>
-    <button onclick="
-    // cartQuantity -= 1;
-    cartQuantity --;
-    console.log(`Cart Quantity: ${cartQuantity}`);
-    ">Remove Quantity</button>
-    <button onclick="
-    cartQuantity = 0;
-    console.log('Cart was reset');
-    console.log(`Cart Quantity: ${cartQuantity}`);
-    ">Reset</button>
-
+    <p>This is an boolean and conditional statement like bool true/false condition if else</p>
     <script>
-        let cartQuantity = 0;
-        const cartQuantity2 = 25; // this is not changable variable
-        var cartQuantity3 = 'const can not changable variable. \nvar cangable but not use new version of JavaScript, use old version of JS'; // canagable but not use new version of JavaScript, use old version of JS
+        console.log(typeof 'true');
+        console.log(typeof 'false');
+        console.log(typeof true);
+        console.log(typeof false);
+        console.log(3 < 5);
+        console.log(3 > 5);
 
-        console.log(cartQuantity);
-        console.log(cartQuantity2);
-        console.log(cartQuantity3);
-        console.log(typeof cartQuantity3); // checked the type of a variable 
+        if (false) {
+            console.log('if true');
+        }else{
+            console.log('else false');
+        }
         
     </script>
 </body>
