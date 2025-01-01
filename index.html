@@ -9,6 +9,11 @@
 
 <body>
     <p>Game with dom</p>
+
+    <button onclick="subscribed()" class="js-subscribe-button">Subscribe</button>
+
+    <p>Game Rock Paper Scissors</p>
+
     <button onclick="playGame('rock')">Rock</button>
     <button onclick="playGame('paper')">Paper</button>
     <button onclick="playGame('scissors')">Scissors</button>
@@ -18,7 +23,43 @@
     <p class="js-score"></p>
 
     <button onclick="resetGame()">Reset Scroe</button>
+
+    <p>Product Price Calculator</p>
+
+    <div class="">
+        <input onkeydown="handelCostKeyDown(event)" placeholder="Cost of product" id="js-total">
+        <button onclick="calculateTotal()">Caclulate</button>
+        <p id="total-cost"></p>
+    </div>
+
     <script>
+        function handelCostKeyDown(event) {
+            if (event.key === 'Enter') {
+                calculateTotal();
+            }
+        }
+
+        function calculateTotal() {
+            const inputElement = document.querySelector('#js-total');
+            let cost = Number(inputElement.value);
+
+            if (cost < 40) {
+                cost += 10;
+            }
+
+            document.querySelector('#total-cost').innerHTML = `Total cost: ${cost}`;
+        }
+
+        function subscribed() {
+            const buttonElement = document.querySelector('.js-subscribe-button');
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerText = 'Subscribed';
+            } else {
+                buttonElement.innerText = 'Subscribe';
+            }
+        }
+
+
         let score = JSON.parse(localStorage.getItem('score')) || {
             wins: 0,
             losses: 0,
@@ -29,7 +70,7 @@
 
         function showScore() {
             const scoreElement = document.querySelector('.js-score');
-            scoreElement.textContent = `Wins: ${score['wins']}, Losses: ${score['losses']}, Ties: ${score['ties']}`;            
+            scoreElement.textContent = `Wins: ${score['wins']}, Losses: ${score['losses']}, Ties: ${score['ties']}`;
         }
 
         function resetGame() {
