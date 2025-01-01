@@ -27,6 +27,7 @@
     <script src="assets/script.js"></script>
 
     <script>
+        /*
         [
             'rock', 
             'paper',
@@ -34,7 +35,35 @@
         ].forEach(function (move, index) {
             console.log(move);
             console.log(index);
-        }); // loop through array
+        }); */
+
+        // Regular Function
+        function regularFunction() {
+            console.log('Regular Function');
+        }
+        function regularFunction2(param) {
+            console.log();
+        }
+
+        // Arrow Function
+        const arrowFunction = () => {
+            console.log('Arrow Function');
+        };
+        const arrowFunction2 = (param) => {
+            console.log(param);
+        };
+        const oneParam = (param) => {
+            console.log(param + 1);
+        };
+        const oneLine = () => 25 + 1;
+        const oneLineParam = (param) => param + 1;
+
+        arrowFunction();
+        arrowFunction2(5);
+        oneParam(55);
+        console.log(oneLine());
+        console.log(oneLineParam(10));
+        
     </script>
 
 </body>
