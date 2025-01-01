@@ -5,12 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM with css</title>
+    <style>
+        .subscribe-button{
+            background-color: rgb(0, 0, 0);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+        .is-subscribed{
+            background-color: gray;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <p>Dom with css use in dom project</p>
 
-    <button onclick="subscribed()" class="js-subscribe-button">Subscribe</button>
+    <button onclick="subscribed()" class="js-subscribe-button subscribe-button">Subscribe</button>
 
     <p>Game Rock Paper Scissors</p>
 
@@ -54,8 +72,10 @@
             const buttonElement = document.querySelector('.js-subscribe-button');
             if (buttonElement.innerText === 'Subscribe') {
                 buttonElement.innerText = 'Subscribed';
+                buttonElement.classList.add('is-subscribed');
             } else {
                 buttonElement.innerText = 'Subscribe';
+                buttonElement.classList.remove('is-subscribed');
             }
         }
 
