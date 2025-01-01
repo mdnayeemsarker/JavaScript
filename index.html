@@ -4,61 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advanced Function</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <title>Advanced Function Project</title>
 </head>
 
 <body>
-    <p>Ready for Advanced Function</p>
+    <p>Advanced Function with existing project</p>
+
+    <p class="title">Game Rock Paper Scissors</p>
+
+    <button class="button" onclick="playGame('rock')">Rock</button>
+    <button class="button" onclick="playGame('paper')">Paper</button>
+    <button class="button" onclick="playGame('scissors')">Scissors</button>
+
+    <p class="js-result"></p>
+    <p class="js-move"></p>
+    <p class="js-score"></p>
+
+    <button class="button" onclick="resetGame()">Reset Scroe</button>
+    <button class="auto-play" onclick="autoPlay()">Auto Play</button>
+
+    <script src="assets/script.js"></script>
 
     <script>
-        /*
-        function greeting() { // function with name
-            console.log('Hello World');            
-        }
-        greeting();
-        const num = 2;
-
-        const function1 = function () { // function without name
-            console.log('Hello World2');
-        };
-        console.log(function1);
-        function1();
-
-        const object1 = {
-            name: 'John',
-            age: 25,
-            fun: function () {
-                console.log('Hello World3');
-            }
-        };
-        object1.fun();
-
-        function display(params) {
-            console.log(params);
-        }
-        display('Hello World4');
-
-        function run(params) {
-            params();           
-        }
-
-        run(function () {
-            console.log('Hello World5');
-            
-        });*/
-
-        setTimeout(function () {
-            console.log('timeout');
-        }, 3000);
-
-        console.log('next line');
-
-        setInterval(function () {
-            console.log('interval');
-        }, 2000);
-        console.log('next line2');
-        
-        
+        [
+            'rock', 
+            'paper',
+            'scissors'
+        ].forEach(function (move, index) {
+            console.log(move);
+            console.log(index);
+        }); // loop through array
     </script>
 
 </body>
