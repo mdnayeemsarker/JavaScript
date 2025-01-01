@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM with css</title>
     <style>
+        body{
+            font-family: Arial, sans-serif;
+        }
         .subscribe-button{
             background-color: rgb(0, 0, 0);
             color: white;
@@ -22,6 +25,24 @@
             border-radius: 50px;
             cursor: pointer;
         }
+        .cost-input{
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+        .cost-button{
+            background-color: green;
+            border: none;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            cursor: pointer;
+        }
+        .title{
+            font-size: 24px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -30,7 +51,7 @@
 
     <button onclick="subscribed()" class="js-subscribe-button subscribe-button">Subscribe</button>
 
-    <p>Game Rock Paper Scissors</p>
+    <p class="title">Game Rock Paper Scissors</p>
 
     <button onclick="playGame('rock')">Rock</button>
     <button onclick="playGame('paper')">Paper</button>
@@ -45,8 +66,8 @@
     <p>Product Price Calculator</p>
 
     <div class="">
-        <input onkeydown="handelCostKeyDown(event)" placeholder="Cost of product" id="js-total">
-        <button onclick="calculateTotal()">Caclulate</button>
+        <input onkeydown="handelCostKeyDown(event)" placeholder="Cost of product" id="js-total" class="cost-input">
+        <button onclick="calculateTotal()" class="cost-button">Caclulate</button>
         <p id="total-cost"></p>
     </div>
 
