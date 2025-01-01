@@ -24,9 +24,27 @@
     <button class="button" onclick="resetGame()">Reset Scroe</button>
     <button class="auto-play" onclick="autoPlay()">Auto Play</button>
 
+
+    <div style="margin-top: 10px;">
+        <button class="js-button">Click</button>
+    </div>
     <script src="assets/script.js"></script>
 
     <script>
+        const buttonElement = document.querySelector('.js-button');
+
+        const eventListener = () => {
+            console.log('Button Clicked');
+        };
+
+        buttonElement.addEventListener('click', eventListener);
+
+        buttonElement.removeEventListener('click', eventListener);
+
+        buttonElement.addEventListener('click', () => {
+            console.log('Button Clicked2');
+        });
+
         /*
         [
             'rock', 
@@ -36,6 +54,8 @@
             console.log(move);
             console.log(index);
         }); */
+
+        /*
 
         // Regular Function
         function regularFunction() {
@@ -63,6 +83,7 @@
         oneParam(55);
         console.log(oneLine());
         console.log(oneLineParam(10));
+        */
         
     </script>
 
