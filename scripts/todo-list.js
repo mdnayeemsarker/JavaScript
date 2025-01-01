@@ -1,16 +1,16 @@
-const todoList = [];
+// const todoList = [];
 
-function addTodo() {
-  const inputElement = document.querySelector('.todo-name');
-  const name = inputElement.value;
-  console.log(name);
+// function addTodo() {
+//   const inputElement = document.querySelector('.todo-name');
+//   const name = inputElement.value;
+//   console.log(name);
 
-  todoList.push(name);
+//   todoList.push(name);
 
-  console.log(todoList);
+//   console.log(todoList);
 
-  inputElement.value = ''; 
+//   inputElement.value = ''; 
     
-}
+// }
 
 
