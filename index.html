@@ -9,7 +9,26 @@
 
 <body>
     <p>Array and loog learning</p>
-    
+
+    <script>
+
+        const myArray = [1, 2, 3, 4, 5];
+        console.log(myArray);
+        myArray[0] = 30; // array update
+        console.log(myArray);
+        console.log(myArray[3]); //  array index
+        console.log(typeof myArray); // array type
+        console.log(Array.isArray(myArray)); // check array
+        console.log(myArray.length); // check array
+        myArray.push(6); // add element in array
+        myArray.splice(0, 4); // add element in array
+        console.log(myArray);
+        const newArray = Array(1, '2, 3, 4, 5', true, { a: 1, b: 2 }, [1, 2, 3, 4, 5]);
+
+        console.log(newArray);
+        
+        
+    </script>
 </body>
 
 </html>
