@@ -35,8 +35,16 @@
         function display(params) {
             console.log(params);
         }
-
         display('Hello World4');
+
+        function run(params) {
+            params();           
+        }
+
+        run(function () {
+            console.log('Hello World5');
+            
+        });
     </script>
 
 </body>
