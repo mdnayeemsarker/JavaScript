@@ -5,16 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Array and Loop project</title>
+    <link rel="stylesheet" href="styles/todo.css">
 </head>
 
 <body>
     <p>Todo list with Array</p>
 
 
-    <input class="todo-name" placeholder="Enter your todo">
-    <button onclick="addTodo()">Add</button>
+    <div class="todo-input-grid">
+        <input class="todo-name name-input" placeholder="Enter your todo">
+        <input type="date" class="todo-date date-input">
+        <button onclick="addTodo()" class="add-todo-button">Add</button>
+    </div>
 
-    <div class="todo-list"></div>
+    <div class="todo-list-div todo-grid"></div>
 
     <script src="scripts/todo-list.js"></script>
 
