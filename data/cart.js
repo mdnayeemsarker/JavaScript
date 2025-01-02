@@ -3,7 +3,8 @@ if (!cart) {
     cart = [
         {
             productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-            quantity: 1
+            quantity: 1,
+            deliveryOptionId: '1'
         }
     ];
 }
@@ -22,7 +23,7 @@ export function addToCart(productId) {
     if (productFound) {
         productFound.quantity++;
     } else {
-        cart.push({productId: productId, quantity: 1});
+        cart.push({productId: productId, quantity: 1, deliveryOptionId: '1'});
     }    
     saveCartToStorage();
 }
