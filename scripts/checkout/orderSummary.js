@@ -36,7 +36,7 @@ export function renderOrderSummery() {
                     ${productFound.name}
                 </div>
                 <div class="product-price">
-                    ${formatCurrency(productFound.priceCents)}
+                    $${formatCurrency(productFound.priceCents)}
                 </div>
                 <div class="product-quantity">
                     <span>
@@ -67,7 +67,7 @@ export function renderOrderSummery() {
             const today = dayjs();
             const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
             const dateString = deliveryDate.format('dddd, MMMM D');
-            const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `${formatCurrency(deliveryOption.priceCents)}`;
+            const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)}`;
 
             const isChecked = cartItem.deliveryOptionId === deliveryOption.id;
 
