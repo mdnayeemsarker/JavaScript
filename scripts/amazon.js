@@ -1,4 +1,4 @@
-import { cart, addToCart, updateCurtQuantify } from '../data/cart.js';
+import { addToCart, updateCurtQuantify } from '../data/cart.js';
 import { products } from '../data/products.js';
 let productHTML = ''; 
 
