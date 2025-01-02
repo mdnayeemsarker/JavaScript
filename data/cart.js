@@ -43,3 +43,14 @@ export function removeProduct(productId) {
     });
     saveCartToStorage();
 }
+
+export function updateDelivaryOption(productId, deliveryOptionId) {
+    let productFound;
+    cart.forEach((cartItem) => {
+        if (cartItem.productId === productId) {
+            productFound = cartItem;
+        }
+    });
+    productFound.deliveryOptionId = deliveryOptionId;
+    saveCartToStorage();
+}

@@ -1,11 +1,8 @@
-import { cart, removeProduct } from "../data/cart.js";
+import { cart, removeProduct, updateDelivaryOption } from "../data/cart.js";
 import { products } from "../data/products.js";
 import { formatCurrency } from './utiles/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions } from '../data/deliveryOptions.js';
-
-const today = dayjs();
-const deliveryDate = today.add(7, 'days');
 
 let cartSummaryHTML = '';
 
@@ -73,16 +70,6 @@ cart.forEach((cartItem) => {
     </div>`;
 });
 
-document.querySelector('.order-summary').innerHTML = cartSummaryHTML;
-
-document.querySelectorAll('.js-dilit-link').forEach((link) => {
-    link.addEventListener('click', () => {
-        const productId = link.dataset.productId;
-        removeProduct(productId);
-        document.querySelector(`.js-cart-item-container-${productId}`).remove();
-    });
-});
-
 function deliveryOptionsHtml(productFound, cartItem) {
     let deliveryOptionHtml = '';
     deliveryOptions.forEach((deliveryOption) => {
@@ -94,7 +81,7 @@ function deliveryOptionsHtml(productFound, cartItem) {
         const isChecked = cartItem.deliveryOptionId === deliveryOption.id;
 
         deliveryOptionHtml += `
-            <div class="delivery-option">
+            <div class="delivery-option js-delivery-option" data-product-id="${productFound.id}" data-delivery-option-id="${deliveryOption.id}">
                 <input type="radio"
                 ${isChecked ? 'checked' : ''}
                 class="delivery-option-input"
@@ -113,3 +100,20 @@ function deliveryOptionsHtml(productFound, cartItem) {
 
     return deliveryOptionHtml;
 }
+
+document.querySelector('.order-summary').innerHTML = cartSummaryHTML;
+
+document.querySelectorAll('.js-dilit-link').forEach((link) => {
+    link.addEventListener('click', () => {
+        const productId = link.dataset.productId;
+        removeProduct(productId);
+        document.querySelector(`.js-cart-item-container-${productId}`).remove();
+    });
+});
+
+document.querySelectorAll('.js-delivery-option').forEach((option) => {
+    option.addEventListener('click', () => {
+        const { productId, deliveryOptionId } = option.dataset; //short hand property
+        updateDelivaryOption(productId, deliveryOptionId);
+    });
+});
