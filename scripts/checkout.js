@@ -102,6 +102,5 @@ document.querySelectorAll('.js-dilit-link').forEach((link) => {
         // const container = document.querySelector(`.js-cart-item-container-${productId}`);
         // container.remove();
         document.querySelector(`.js-cart-item-container-${productId}`).remove();
-        // console.log(cart); 
     });
 });
