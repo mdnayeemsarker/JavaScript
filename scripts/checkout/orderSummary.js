@@ -3,6 +3,7 @@ import { getProduc } from "../../data/products.js";
 import { formatCurrency } from './../utiles/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js';
+import { renderPaymentSummery } from "./paymentSummary.js";
 
 export function renderOrderSummery() {
    
@@ -44,7 +45,7 @@ export function renderOrderSummery() {
                     <span class="update-quantity-link link-primary">
                     Update
                     </span>
-                    <span class="delete-quantity-link js-dilit-link link-primary" data-product-id="${productFound.id}">
+                    <span class="delete-quantity-link js-delete-link link-primary" data-product-id="${productFound.id}">
                     Delete
                     </span>
                 </div>
@@ -93,11 +94,13 @@ export function renderOrderSummery() {
 
     document.querySelector('.order-summary').innerHTML = cartSummaryHTML;
 
-    document.querySelectorAll('.js-dilit-link').forEach((link) => {
+    document.querySelectorAll('.js-delete-link').forEach((link) => {
         link.addEventListener('click', () => {
             const productId = link.dataset.productId;
             removeProduct(productId);
             document.querySelector(`.js-cart-item-container-${productId}`).remove();
+
+            renderPaymentSummery();
         });
     });
 
@@ -106,6 +109,7 @@ export function renderOrderSummery() {
             const { productId, deliveryOptionId } = option.dataset; //short hand property
             updateDelivaryOption(productId, deliveryOptionId);
             renderOrderSummery();
+            renderPaymentSummery();
         });
     });
 }
