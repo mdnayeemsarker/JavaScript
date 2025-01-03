@@ -16,13 +16,14 @@ function saveCartToStorage() {
 export function addToCart(productId) {
     let productFound;
     cart.forEach((cartItem) => {
-        if (cartItem.id === productId) {
+        if (cartItem.productId === productId) {            
             productFound = cartItem;
         }
-    }); 
+    });
+    
     if (productFound) {
         productFound.quantity++;
-    } else {
+    } else {        
         cart.push({productId: productId, quantity: 1, deliveryOptionId: '1'});
     }    
     saveCartToStorage();

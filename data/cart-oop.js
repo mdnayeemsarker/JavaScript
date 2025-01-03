@@ -19,7 +19,7 @@ function Cart(localStorageKey) {
         addToCart(productId) {
             let productFound;
             this.cartItems.forEach((cartItem) => {
-                if (cartItem.id === productId) {
+                if (cartItem.productId === productId) {
                     productFound = cartItem;
                 }
             }); 
@@ -63,6 +63,3 @@ const businessCart = Cart('cart-business');
 
 cart.loadCartFromStorage();
 businessCart.loadCartFromStorage();
-
-console.log(cart);
-console.log(businessCart);
