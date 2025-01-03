@@ -32,7 +32,7 @@ class Product {
     return `$${formatCurrency(this.priceCents)}`;
   }
 
-  extraInfoHTML() {
+  extraInfoHTML() { // method overriding
     return'';
   }
 }
@@ -42,7 +42,8 @@ class Clothing extends Product {
     super(productDetails);
     this.sizeChartLink = productDetails.sizeChartLink;
   }
-  extraInfoHTML() {
+  extraInfoHTML() { // method overriding
+    // super.extraInfoHTML();
     return `<a href="${this.sizeChartLink}" target="_blank">Size Chart</a>`;
   }
 }
