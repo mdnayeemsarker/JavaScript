@@ -6,10 +6,14 @@ import { loadCarts } from '../data/cart.js';
 // async await
 async function loadPage() {
     try {
+        // throw 'error1'; //manually create error
+
         await loadProductsFetch();        
-        const value = await new Promise((resolve) => {
+        const value = await new Promise((resolve, reject) => {
+            // throw 'error2'; //manually create error
             loadCarts(() => {
-                resolve('value');
+                // reject('error3');
+                resolve('value3');
             });
         });
     } catch (error) {
