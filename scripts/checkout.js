@@ -4,6 +4,8 @@ import { renderPaymentSummery } from './checkout/paymentSummary.js';
 import { loadProducts, loadProductsFetch } from '../data/products.js';
 import { loadCarts } from '../data/cart.js';
 
+// async await
+
 Promise.all([
     loadProductsFetch(),
     new Promise((resolve) => {
