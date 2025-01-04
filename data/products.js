@@ -119,7 +119,7 @@ export function loadProductsFetch() {
 
   return promise;
 }
-loadProductsFetch();
+// loadProductsFetch();
 /*
 loadProductsFetch().then(() => {
   // fun();

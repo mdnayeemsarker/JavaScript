@@ -5,12 +5,17 @@ import { loadCarts } from '../data/cart.js';
 
 // async await
 async function loadPage() {
-    await loadProductsFetch();
-    const value = await new Promise((resolve) => {
-        loadCarts(() => {
-            resolve('value');
+    try {
+        await loadProductsFetch();        
+        const value = await new Promise((resolve) => {
+            loadCarts(() => {
+                resolve('value');
+            });
         });
-    });
+    } catch (error) {
+        console.log('Unexpected error, please try again later');
+        
+    }
 
     renderOrderSummery();
     renderPaymentSummery();
