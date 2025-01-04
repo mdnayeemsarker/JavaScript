@@ -1,21 +1,23 @@
 import { renderOrderSummery } from './checkout/orderSummary.js';
 import { renderPaymentSummery } from './checkout/paymentSummary.js';
-// import '../data/backend.js'
-import { loadProducts, loadProductsFetch } from '../data/products.js';
+import { loadProductsFetch } from '../data/products.js';
 import { loadCarts } from '../data/cart.js';
 
 // async await
-
 async function loadPage() {
-    console.log('load page');
-    
+    await loadProductsFetch();
+    const value = await new Promise((resolve) => {
+        loadCarts(() => {
+            resolve('value');
+        });
+    });
+
+    renderOrderSummery();
+    renderPaymentSummery();
 }
 
-loadPage().then(() => {
-    console.log('next stape');
-    
-});
-
+loadPage();
+/*
 Promise.all([
     loadProductsFetch(),
     new Promise((resolve) => {
@@ -30,6 +32,7 @@ Promise.all([
     renderOrderSummery();
     renderPaymentSummery();
 });
+*/
 
 /*
 new Promise((resolve) =>{
