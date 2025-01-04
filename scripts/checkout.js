@@ -6,6 +6,16 @@ import { loadCarts } from '../data/cart.js';
 
 // async await
 
+async function loadPage() {
+    console.log('load page');
+    
+}
+
+loadPage().then(() => {
+    console.log('next stape');
+    
+});
+
 Promise.all([
     loadProductsFetch(),
     new Promise((resolve) => {
