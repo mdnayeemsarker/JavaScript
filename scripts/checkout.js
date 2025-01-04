@@ -4,12 +4,35 @@ import { renderPaymentSummery } from './checkout/paymentSummary.js';
 import { loadProducts } from '../data/products.js';
 import { loadCarts } from '../data/cart.js';
 
+Promise.all([
+    new Promise((resolve) =>{
+        loadProducts(() => {
+            resolve('value1');
+        });
+    }),
+
+    new Promise((resolve) => {
+        loadCarts(() => {
+            resolve();
+        });
+    })
+
+]).then((value) => {
+    console.log(value);
+    
+    renderOrderSummery();
+    renderPaymentSummery();
+});
+
+/*
 new Promise((resolve) =>{
     loadProducts(() => {
-        resolve();
+        resolve('value1');
     });
 
-}).then(() => {
+}).then((value) => {
+    console.log(value);
+    
     return new Promise((resolve) => {
         loadCarts(() => {
             resolve();
@@ -20,7 +43,7 @@ new Promise((resolve) =>{
     renderOrderSummery();
     renderPaymentSummery();
 });
-
+*/
 /*
 loadProducts(() => {
     loadCarts(() => {
