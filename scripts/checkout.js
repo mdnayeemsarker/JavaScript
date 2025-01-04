@@ -4,20 +4,28 @@ import { renderPaymentSummery } from './checkout/paymentSummary.js';
 import { loadProducts } from '../data/products.js';
 import { loadCarts } from '../data/cart.js';
 
-/*
 new Promise((resolve) =>{
     loadProducts(() => {
         resolve();
     });
+
+}).then(() => {
+    return new Promise((resolve) => {
+        loadCarts(() => {
+            resolve();
+        });
+    });
+    
 }).then(() => {
     renderOrderSummery();
     renderPaymentSummery();
-})
-*/
+});
 
+/*
 loadProducts(() => {
     loadCarts(() => {
         renderOrderSummery();
         renderPaymentSummery();
     })
 })
+*/
